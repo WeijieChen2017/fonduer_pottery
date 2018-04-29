@@ -719,6 +719,14 @@ def same_page(c):
         for i in range(len(c))
     ]))
 
+def same_sentence(c):
+    """Winston Chen"""
+    return (all([
+        c[i].sentence.is_visual()
+        and c[i].sentence.id == c[0].sentence.id
+        for i in range(len(c))
+    ]))
+
 
 def get_horz_ngrams(span,
                     attrib='words',
